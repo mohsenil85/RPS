@@ -7,6 +7,7 @@ paper = e.Paper('paper')
 
 print("simple testing case:  rock vs paper")
 print( paper.compareTo(e.Rock))
+print()
 
 s = p.StupidBot('dumb')
 
@@ -16,4 +17,9 @@ print(s.play(e.Scissors))
 print(s.play(e.Paper))
 print(s.play(e.Lizard))
 print(s.play(e.Spock))
+print()
 
+r = p.RandomBot('rando')
+
+print(r.play(e.Rock))
+print(r.play(e.Rock))
