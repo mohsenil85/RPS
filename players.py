@@ -8,7 +8,6 @@ class Player:
 	def play(self):
 		raise NotImplementedError("Not yet implemented")
 
-#aRock = e.Rock('aRock')
 class StupidBot(Player):
 	def play(self, Element):
 		aRock = e.Rock('aRock')
@@ -19,3 +18,15 @@ class RandomBot(Player):
 		anElement = random.choice(e.moves)
 		theElement = anElement('thing')
 		return theElement.compareTo(Element)
+
+class IterativeBot(Player):
+	def __init__(self, _name, _index):
+		self._name = _name
+		self._index = _index
+	def play(self, Element):
+		anElement = e.moves[self._index]
+		theElement = anElement('thing')
+		self._index += 1
+		self._index %= 4
+		return theElement.compareTo(Element)
+
