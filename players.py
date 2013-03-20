@@ -9,20 +9,15 @@ class Player:
 		raise NotImplementedError("Not yet implemented")
 
 class StupidBot(Player):
+	"StupidBot"
 	def play(self, Element):
 		aRock = e.Rock('aRock')
 		return aRock.compareTo(Element)
 	def getPlayed(self):
 		return e.Rock
 
-class lizBot(Player):
-	def play(self, Element):
-		lizard = e.Lizard('liz')
-		return lizard.compareTo(Element)
-	def getPlayed(self):
-		return e.Lizard
-
 class RandomBot(Player):
+	"RandomBot"
 	def play(self, Element):
 		anElement = random.choice(e.moves)
 		theElement = anElement('thing')
@@ -31,6 +26,7 @@ class RandomBot(Player):
 		return random.choice(e.moves)
 
 class IterativeBot(Player):
+	"IterativeBot"
 	def __init__(self, _name, _index):
 		self._name = _name
 		self._index = _index
@@ -46,6 +42,7 @@ class IterativeBot(Player):
 		return e.moves[self._index]
 
 class LastPlayBot(Player):
+	"LastPlayBot"
 	def __init__(self, _name, _play):
 		self._name = _name
 		self._play = _play
@@ -59,6 +56,7 @@ class LastPlayBot(Player):
 
 
 class Human(Player):
+	"Human"
 	def play(self, Element):
 		print("Please choose:")
 		choice = self.playInput()
@@ -84,6 +82,7 @@ class Human(Player):
 		return choice - 1
 		
 class AdventureMode(Human):
+	"AdventureMode"
 	def play(self, Element):
 		print("You see a", Element.__doc__)
 		print("Please choose:")
@@ -97,3 +96,7 @@ class AdventureMode(Human):
 		choice = self.playInput()
 		print("You chose", e.moves[choice].__doc__)
 		return e.moves[choice].compareTo(Element, Element)
+
+bots = [StupidBot, RandomBot, IterativeBot, LastPlayBot, Human] 
+humans = [Human, AdventureMode]
+
