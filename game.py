@@ -21,6 +21,9 @@ def getBot(index):
 		return p.IterativeBot('itrBot', 1)
 	elif index == 3:
 		return p.LastPlayBot('lastPlayBot', e.Rock)
+	elif index == 5:
+		return p.AlwaysTies( e.Rock)
+		
 	else:
 		return p.bots[index]('Player')
 	
@@ -40,6 +43,10 @@ def main():
 	printMenu()
 	print()
 	choice = getInput(p.bots.__len__())
+	while (choice == 5):
+		print("AlwaysTries is not implemented for the direct object case!")
+		print("Please pick something else.")
+		choice = getInput(p.bots.__len__())
 	player2 = getBot(choice)
 	print("Player 2 is a", player2.__doc__)
 	print()
