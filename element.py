@@ -43,6 +43,8 @@ class Paper(Element):
 	def compareTo(self, Element):
 		if Element == Paper:
 			return "Tie", "Paper equals Paper"
+		elif Rock == Element:
+			return "Win", "Paper covers Rock"
 		elif Element == Rock:
 			return "Win", "Paper covers Rock"
 		elif Element == Spock:
@@ -52,6 +54,8 @@ class Paper(Element):
 		elif Element == Lizard:
 			return "Lose", "Paper gets eaten by Lizard"
 		else:
+			print("this was hit")
+			print(Element)
 			raise NotImplementedError("Not yet implemented")
 
 class Spock(Element):
