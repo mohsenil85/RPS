@@ -1,7 +1,6 @@
 import random
 import element as e
 import players as p
-import printeverything as pe
 
 rock = e.Rock('rock')
 paper = e.Paper('paper')
@@ -37,12 +36,12 @@ print("test case of randombot vs rock twice")
 r = p.RandomBot('rando')
 s2 = p.StupidBot('stupid2')
 print(r.play(s2.getPlayed()))
+print(r.play(s2.getPlayed()))
 print()
 
 
 print("test case of randombot vs randombot 5 times")
 for i in range(5):
-	print("*****i",  i)
 	r = p.RandomBot('rando')
 	r1 = p.RandomBot('rando1')
 	print(r.play(r1.getPlayed()))
@@ -53,7 +52,6 @@ print("test case of randombot vs stupidbot")
 stupid = p.StupidBot('stupid')
 random = p.RandomBot('random')
 for i in range(5):
-	print("^^^****i",  i)
 	print(stupid.play(random.getPlayed()))
 	print(random.play(stupid.getPlayed()))
 
@@ -83,6 +81,24 @@ print(lp.play(e.Rock))
 print(lp.play(e.Scissors))
 
 
+print()
+print("test case of last play bot vs randombot 5 times")
+for i in range(5):
+	print(lp.play(random.getPlayed()))
 
 print()
+print("test case of last play bot vs itatebot 5 times")
+for i in range(5):
+	print(lp.play(itr.getPlayed()))
+print()
+
+print()
+print("test case of  iterative bot vs last play bot 5 times")
+for i in range(5):
+	print(itr.play(lp.getPlayed()))
+
+print("human testing")
+h = p.Human('human')
+h.play()
+
 print("success")

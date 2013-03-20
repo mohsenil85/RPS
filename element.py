@@ -9,6 +9,7 @@ class Element:
 		raise NotImplementedError("Not yet implemented")
 
 class Rock(Element):
+	"Rock"
 	def compareTo(self, Element):
 		if Element == Rock:
 			return "Tie", "Rock equals Rock"
@@ -25,6 +26,7 @@ class Rock(Element):
 	
 
 class Scissors(Element):
+	"Scissors"
 	def compareTo(self, Element):
 		if Element == Scissors:
 			return "Tie", "Scissors equals Scissors"
@@ -40,6 +42,7 @@ class Scissors(Element):
 			raise NotImplementedError("Not yet implemented")
 		
 class Paper(Element):
+	"Paper"
 	def compareTo(self, Element):
 		if Element == Paper:
 			return "Tie", "Paper equals Paper"
@@ -54,11 +57,10 @@ class Paper(Element):
 		elif Element == Lizard:
 			return "Lose", "Paper gets eaten by Lizard"
 		else:
-			print("this was hit")
-			print(Element)
 			raise NotImplementedError("Not yet implemented")
 
 class Spock(Element):
+	"Spock"
 	def compareTo(self, Element):
 		if Element == Paper:
 			return "Lose", "Spock gets disproven by Paper"
@@ -73,7 +75,8 @@ class Spock(Element):
 		else:
 			raise NotImplementedError("Not yet implemented")
 class Lizard(Element):
-	def compareTo( Element):
+	"Lizard"
+	def compareTo(self, Element):
 		if Element == Paper:
 			return "Win", "Lizard eats Paper"
 		elif Element == Rock:

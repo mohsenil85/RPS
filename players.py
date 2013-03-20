@@ -47,5 +47,11 @@ class LastPlayBot(Player):
 		theElement = anElement('thing')
 		self._play = Element
 		return theElement.compareTo(Element)
+	def getPlayed(self):
+		return self._play
 
 
+class Human(Player):
+	def play(self):
+		for i in range(5):
+			print(i+1, e.moves[i].__doc__)
