@@ -53,5 +53,9 @@ class LastPlayBot(Player):
 
 class Human(Player):
 	def play(self):
+		print("Please pick a choice")
 		for i in range(5):
 			print(i+1, e.moves[i].__doc__)
+		choice = input(">")
+		print(choice)
+
