@@ -12,8 +12,10 @@ class StupidBot(Player):
 	"StupidBot"
 	def play(self, Element):
 		aRock = e.Rock('aRock')
+		print("StupidBot plays a", aRock.__doc__, "!")
 		return aRock.compareTo(Element)
 	def getPlayed(self):
+		print("StupidBot plays a",  e.Rock.__doc__, "!")
 		return e.Rock
 
 class RandomBot(Player):
@@ -21,9 +23,13 @@ class RandomBot(Player):
 	def play(self, Element):
 		anElement = random.choice(e.moves)
 		theElement = anElement('thing')
+		print("RandomBot plays a", theElement.__doc__, "!")
 		return theElement.compareTo(Element)
 	def getPlayed(self):
-		return random.choice(e.moves)
+		anElement = random.choice(e.moves)
+		theElement = anElement('thing')
+		print("RandomBot plays a", anElement.__doc__, "!")
+		return anElement
 
 class IterativeBot(Player):
 	"IterativeBot"
@@ -35,10 +41,12 @@ class IterativeBot(Player):
 		self._index %= 4
 		anElement = e.moves[self._index]
 		theElement = anElement('thing')
+		print("IterativeBot plays a", theElement.__doc__, "!")
 		return theElement.compareTo(Element)
 	def getPlayed(self):
 		self._index += 1
 		self._index %= 4
+		print("IterativeBot plays a", e.moves[self._index].__doc__, "!")
 		return e.moves[self._index]
 
 class LastPlayBot(Player):
@@ -49,10 +57,26 @@ class LastPlayBot(Player):
 	def play (self, Element):
 		anElement = self._play
 		theElement = anElement('thing')
+		print("LastPlayBot plays a", theElement.__doc__, "!")
 		self._play = Element
 		return theElement.compareTo(Element)
 	def getPlayed(self):
+		print("LastPlayBot plays a", self._play.__doc__, "!")
 		return self._play
+
+class AlwaysTies(Player):
+	"AlwaysTies"
+	def play (self, Element):
+		theElement = Element
+		print("AlwaysTies plays a", theElement.__doc__, "!")
+		return theElement.compareTo(Element)
+	def getPlayed(self):
+		aRock = e.Rock('aRock')
+		print("LastPlayBot plays a", aRock.__doc__, "!")
+		return aRock
+
+
+
 
 
 class Human(Player):
@@ -97,6 +121,6 @@ class AdventureMode(Human):
 		print("You chose", e.moves[choice].__doc__)
 		return e.moves[choice].compareTo(Element, Element)
 
-bots = [StupidBot, RandomBot, IterativeBot, LastPlayBot, Human] 
+bots = [StupidBot, RandomBot, IterativeBot, LastPlayBot, Human, AlwaysTies] 
 humans = [Human, AdventureMode]
 
