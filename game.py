@@ -12,7 +12,10 @@ print()
 s = p.StupidBot('dumb')
 
 print("testing case of stupid bot vs each case")
-print(s.play(e.Rock))
+print(s.play())
+print(s.play().compareTo(rock))
+print()
+print(s.play(s.getPlayed()))
 print(s.play(e.Scissors))
 print(s.play(e.Paper))
 print(s.play(e.Lizard))
@@ -39,6 +42,19 @@ print(itr.play(e.Scissors))
 print(itr.play(e.Paper))
 print(itr.play(e.Lizard))
 print(itr.play(e.Spock))
+
+
 print()
+print("test case of last play bot")
+lp = p.LastPlayBot('lpb', e.Rock)
+print(lp.play(e.Scissors))
+print(lp.play(e.Paper))
+print(lp.play(e.Lizard))
+print(lp.play(e.Spock))
+print(lp.play(e.Rock))
+print(lp.play(e.Scissors))
+
+
+
 print()
 print("success")

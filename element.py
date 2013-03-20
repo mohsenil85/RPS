@@ -13,15 +13,16 @@ class Rock(Element):
 		if Element == Rock:
 			return "Tie", "Rock equals Rock"
 		elif Element == Paper:
-			return "Lose", "Paper covers Rock"
+			return "Lose", "Rock gets covered by Paper"
 		elif Element == Spock:
-			return "Lose", "Spock vaporizes Rock"
+			return "Lose", "Rock gets vaporized by Spock"
 		elif Element == Scissors:
 			return "Win", "Rock crushes Scissors"
 		elif Element == Lizard:
 			return "Win", "Rock crushes Lizard"
 		else:
 			raise NotImplementedError("Not yet implemented")
+	
 
 class Scissors(Element):
 	def compareTo(self, Element):
@@ -30,9 +31,9 @@ class Scissors(Element):
 		elif Element == Paper:
 			return "Win", "Scissors cuts Paper"
 		elif Element == Spock:
-			return "Lose", "Spock smashes Scissors"
+			return "Lose", "Scissors get smashed by Spock"
 		elif Element == Rock:
-			return "Lose", "Rock crushes Scissors"
+			return "Lose", "Scissors get crushed by Rock"
 		elif Element == Lizard:
 			return "Win", "Scissors decapitate Lizard"
 		else:
@@ -47,16 +48,16 @@ class Paper(Element):
 		elif Element == Spock:
 			return "Win", "Paper disproves Spock"
 		elif Element == Scissors:
-			return "Lose", "Scissors cuts Paper"
+			return "Lose", "Paper gets cut by Scissors"
 		elif Element == Lizard:
-			return "Lose", "Lizard eats Paper"
+			return "Lose", "Paper gets eaten by Lizard"
 		else:
 			raise NotImplementedError("Not yet implemented")
 
 class Spock(Element):
 	def compareTo(self, Element):
 		if Element == Paper:
-			return "Lose", "Paper disproves Spock"
+			return "Lose", "Spock gets disproven by Paper"
 		elif Element == Rock:
 			return "Win", "Spock vaporizes Rock"
 		elif Element == Spock:
@@ -64,7 +65,7 @@ class Spock(Element):
 		elif Element == Scissors:
 			return "Win", "Spock smashes Scissors"
 		elif Element == Lizard:
-			return "Lose", "Lizard poisons Spock"
+			return "Lose", "Spock gets poison by Lizard"
 		else:
 			raise NotImplementedError("Not yet implemented")
 class Lizard(Element):
@@ -72,11 +73,11 @@ class Lizard(Element):
 		if Element == Paper:
 			return "Win", "Lizard eats Paper"
 		elif Element == Rock:
-			return "Lose", "Rock crushes Lizard"
+			return "Lose", "Lizard gets crushed by Rock"
 		elif Element == Spock:
 			return "Win", "Lizard poisons Spock"
 		elif Element == Scissors:
-			return "Lose", "Scissors decapitates Lizard"
+			return "Lose", "Lizard gets decapitated by Scissors"
 		elif Element == Lizard:
 			return "Tie", "Lizard equals Lizard"
 		else:
