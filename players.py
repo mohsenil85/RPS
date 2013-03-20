@@ -15,6 +15,13 @@ class StupidBot(Player):
 	def getPlayed(self):
 		return e.Rock
 
+class lizBot(Player):
+	def play(self, Element):
+		lizard = e.Lizard('liz')
+		return lizard.compareTo(Element)
+	def getPlayed(self):
+		return e.Lizard
+
 class RandomBot(Player):
 	def play(self, Element):
 		anElement = random.choice(e.moves)
@@ -52,10 +59,41 @@ class LastPlayBot(Player):
 
 
 class Human(Player):
-	def play(self):
-		print("Please pick a choice")
-		for i in range(5):
-			print(i+1, e.moves[i].__doc__)
-		choice = input(">")
-		print(choice)
+	def play(self, Element):
+		print("Please choose:")
+		choice = self.playInput()
+		print("You chose", e.moves[choice].__doc__)
+		print("Your opponent chose", Element.__doc__)
+		return e.moves[choice].compareTo(Element, Element)
 
+	def getPlayed(self):
+		print("Please choose:")
+		choice = self.playInput()
+		print("You chose", e.moves[choice].__doc__)
+		return e.moves[choice].compareTo(Element, Element)
+	def playInput(self):
+		for i in range(e.moves.__len__()):
+			print(i+1, e.moves[i].__doc__)
+		notDone = True
+		while (notDone):
+			choice =  int(input("> "))
+			if range(e.moves.__len__()).__contains__(choice - 1) :
+				notDone = False
+			else:
+				print("Invalid choice") 
+		return choice - 1
+		
+class AdventureMode(Human):
+	def play(self, Element):
+		print("You see a", Element.__doc__)
+		print("Please choose:")
+		choice = self.playInput()
+		print("You chose", e.moves[choice].__doc__)
+		return e.moves[choice].compareTo(Element, Element)
+
+	def getPlayed(self):
+		print("You were attacked by", Element.__doc__)
+		print("Please choose:")
+		choice = self.playInput()
+		print("You chose", e.moves[choice].__doc__)
+		return e.moves[choice].compareTo(Element, Element)
