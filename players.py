@@ -64,8 +64,8 @@ class LastPlayBot(Player):
 		print(self.__doc__, "plays a", self._play.__doc__, "!")
 		return self._play
 
-class AlwaysTies(Player):
-	"AlwaysTies"
+class MyBot(Player):
+	"MyBot"
 	def __init__(self, _play):
 		self._play = _play
 	def play (self, Element):
@@ -125,6 +125,6 @@ class AdventureMode(Human):
 		print("You chose", e.moves[choice].__doc__)
 		return e.moves[choice].compareTo(Element, Element)
 
-bots = [StupidBot, RandomBot, IterativeBot, LastPlayBot, Human, AlwaysTies] 
+bots = [StupidBot, RandomBot, IterativeBot, LastPlayBot, Human, MyBot] 
 humans = [Human, AdventureMode]
 

@@ -22,7 +22,7 @@ def getBot(index):
 	elif index == 3:
 		return p.LastPlayBot('lastPlayBot', e.Rock)
 	elif index == 5:
-		return p.AlwaysTies( e.Rock)
+		return p.MyBot( e.Rock)
 		
 	else:
 		return p.bots[index]('Player')
@@ -55,6 +55,7 @@ def main():
 	p2Score = 0
 	for i in range(5):
 		result = round(player1, player2)
+		print(result[1])
 		score = result[0]
 		if score == 'Win':
 			print("Player 1 wins!")
