@@ -55,7 +55,7 @@ for i in range(5):
 	print(stupid.play(random.getPlayed()))
 	print(random.play(stupid.getPlayed()))
 
-print("test case of itrate ive booooot  vs all cases twice")
+print("test case of itrate ive bot  vs all cases twice")
 i = 0
 itr = p.IterativeBot('itr', i)
 print(itr.play(e.Rock))
@@ -102,9 +102,13 @@ print()
 print("human testing")
 print()
 h = p.Human('human')
-am = p.AdventureMode('dude')
-print(h.play(stupid.getPlayed()))
-print(am.play(stupid.getPlayed()))
+for i in range(5):
+	print(h.play(stupid.getPlayed()))
 
+print()
+print("Adventure Mode testing")
+am = p.AdventureMode('dude')
+for i in range(5):
+	print(am.play(random.getPlayed()))
 
 print("success")

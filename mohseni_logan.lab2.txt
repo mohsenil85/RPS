@@ -1,0 +1,7 @@
+Logan Mohseni
+Lab 2 Questions
+
+1.	LastPlayBot has an different constructor, so when it is initialized it takes an Element as a parameter.  This field is then written to in the play() method.	
+2.	MyBot's strategy is to always tie.  It has the same constructor as LastPlayBot, but instead of storing the information, it returns it.  It is kind of complicated because even after the bot has ben instantiated, it still returns an abstract class. 
+3.	Python has dynamic typing.   The type of a variable is not checked until the variable is assigned at run time.  This is late-binding.  If the language were statically typed, then variables would need type declarations.  But since python is dynamic, the type is infered from the value that gets assinged to it.  Python is still strongly typed though.  For example, if some one must cast input to an int.  Since input() returns a string, you have to explicitly convert it:  int(intpu()).  The user defined classes inherit the type object, and then the user can further specify which object to inherit from.  Therefore the user-defined classes always have certain methods.  To get these answers, I used the python documentation at http://docs.python.org/3/, as well as reading a lot of stack overflow questions.  
+4.	Not many trends occured.
