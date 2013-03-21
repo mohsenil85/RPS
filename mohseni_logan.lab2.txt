@@ -2,6 +2,21 @@ Logan Mohseni
 Lab 2 Questions
 
 1.	LastPlayBot has an different constructor, so when it is initialized it takes an Element as a parameter.  This field is then written to in the play() method.	
-2.	MyBot's strategy is to always tie.  It has the same constructor as LastPlayBot, but instead of storing the information, it returns it.  It is kind of complicated because even after the bot has ben instantiated, it still returns an abstract class. 
+
+2.	MyBot's strategy is to always tie.  It has the same constructor as LastPlayBot, but instead of storing the information, it returns it.  It is kind of complicated because even after the bot has been instantiated, it still returns an abstract class. 
+
 3.	Python has dynamic typing.   The type of a variable is not checked until the variable is assigned at run time.  This is late-binding.  If the language were statically typed, then variables would need type declarations.  But since python is dynamic, the type is infered from the value that gets assinged to it.  Python is still strongly typed though.  For example, if some one must cast input to an int.  Since input() returns a string, you have to explicitly convert it:  int(intpu()).  The user defined classes inherit the type object, and then the user can further specify which object to inherit from.  Therefore the user-defined classes always have certain methods.  To get these answers, I used the python documentation at http://docs.python.org/3/, as well as reading a lot of stack overflow questions.  
-4.	Not many trends occured.
+
+4.	Not many trends occured.  If I played as human against iterative bot I could always beat it by remembering which element it was about to play.  In fact, it would be easy to make a bot that always won or lost to the iterative bot.  Same with last play bot, for moves[i], you could just return moves[i+2] to reliably beat iterative bot, or moves[i-2].  In fact, you could use the same relationship (a modular index) to implement a circle of fifths. 
+
+5.	A normal form game is a game where the entirity of the game can be described using a matrix.  So for any relationship in the game, the outcome could be performed using a table.  It is not possible to design an over-all winning strategy unless you have information about for example how the bot is going to respond.  One could design an impossible to reliably defeat bot as long as "impossibility" is taken qua the randomness of the python's random module. But one could just as easily design an impossible to beat bot that just checked the value of the element it was responding to and reacted accordingly.   
+
+6.	For some reason, I found python really easy to write in.  When I finished the project I couldn't believe how many lines each module was, because it hadn't felt as grinding as say, C.  Python also seems very well designed because each object has so much built in.  Many times in the project, when I couldn't figure out how to do something, I'd just load the module into the interactive interpreter and spend some time messing with whatever.  For example, you can call dir(anything) from the interpreter and it will tell you all the visible names for whatever you passed to it.  I know I abused the __doc__ field, just because it was so convenient.  I'm sure it would have been easy to implement the Element subclasses by modifying the __eq__, __lt__, and __gt__ fields.  
+
+7.	Overall, I liked the stack traces that python reported, but I noticed a lot of times they were being traced to a frame just above what I would like to know.  And I'm sure this is an artifact from late binding.  for example, since I was invoking play() on a lot of parametric instances of Element, whenever the version of Element didn't actually get instantiated, it would return from the frame above the one that called play(), and couldn't tell me anything about the context in which play() was called.  In a staticly typed language, the compiler would be able to tell me at least the types of the parameters that had actually been passed to play().
+
+8.	I enjoyed this lab.  Maybe it's because I'm more familliar with java, but I really enjoyed the object oriented-ness.  I thought the abstraction tended to spiral out of control though.  
+
+9.	I spent about 15 hours on this lab.  But it was a very different experience than if I had spent 15 hours programming with C.  
+
+10.	I would use python again in a second.  Everything was extremely simple to use.  Sometimes I ran into issues where i'd be reading help for python2, since it's so much more established.  
